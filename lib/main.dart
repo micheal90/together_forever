@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/core/services/cash_helper.dart';
+import 'package:together_forever/screens/category_screen/category_screen.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/helper/binding.dart';
 import 'package:together_forever/screens/control_screen.dart';
@@ -25,9 +26,16 @@ class MyApp extends StatelessWidget {
         //primaryColor: KPrimaryColor,
         primarySwatch: primarySwatch,
 
-        fontFamily: 'Bellefair',
+        fontFamily: 'RobotoCondensed',
       ),
-      home: ControlScreen(),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => ControlScreen()),
+        GetPage(
+          name: CategoryScreen.routeName,
+          page: () =>  CategoryScreen(),
+        )
+      ],
     );
   }
 }

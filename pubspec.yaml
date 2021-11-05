@@ -25,6 +25,7 @@ dependencies:
   cloud_firestore: null
   country_code_picker: null
   cupertino_icons: null
+  fancy_shimmer_image: ^2.0.0+2
   firebase_auth: null
   firebase_core: null
   firebase_storage: null
@@ -37,6 +38,7 @@ dependencies:
   path: null
   pin_code_fields: null
   shared_preferences: null
+  shimmer: ^2.0.0
   sqflite: null
 
 dev_dependencies:
@@ -68,9 +70,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Bellefair
+    - family: RobotoCondensed
       fonts:
-        - asset: assets/fonts/Bellefair-Regular.ttf
+        - asset: assets/fonts/RobotoCondensed-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

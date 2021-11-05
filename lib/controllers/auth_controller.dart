@@ -15,8 +15,8 @@ import 'package:together_forever/screens/auth/otp_screen.dart';
 import 'package:together_forever/screens/control_screen.dart';
 
 class Authcontroller extends GetxController {
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
-  FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+ final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+ final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   String? email, password, name, imageUrl;
   String code = '+961'; //'+49';
   String? phone;

@@ -1,19 +1,13 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:together_forever/shared/constants.dart';
+import 'package:together_forever/models/meal_model.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 
 class GridItem extends StatefulWidget {
-  const GridItem(
-      {required this.imageUrl,
-      required this.title,
-      required this.subTitle,
-      required this.price,
-      Key? key})
-      : super(key: key);
-  final String imageUrl, title, subTitle;
-  final double price;
+  const GridItem({required this.meal, Key? key}) : super(key: key);
+  final Meal meal;
+
   @override
   _GridItemState createState() => _GridItemState();
 }
@@ -36,7 +30,7 @@ class _GridItemState extends State<GridItem> {
                   Stack(
                     children: [
                       FancyShimmerImage(
-                        imageUrl: widget.imageUrl,
+                        imageUrl: widget.meal.imageUrl,
                         boxFit: BoxFit.cover,
                         height: 140,
                       ),
@@ -53,18 +47,34 @@ class _GridItemState extends State<GridItem> {
                                 borderRadius: const BorderRadius.horizontal(
                                     left: Radius.circular(15.0))),
                             child: CustomText(
-                              text: 'Euro ${widget.price}',
+                              text: 'Euro ${widget.meal.price}',
                             ),
                           ))
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: CustomText(
-                      text: widget.title,
-                      color: Colors.amber,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomText(
+                          text: widget.meal.title,
+                          color: Colors.amber,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: widget.meal.isFavorite
+                                ? const Icon(
+                                    Icons.favorite,
+                                    color: Colors.red,
+                                  )
+                                : const Icon(
+                                    Icons.favorite_border,
+                                    color: Colors.red,
+                                  ))
+                      ],
                     ),
                   ),
                   const Divider(
@@ -74,7 +84,7 @@ class _GridItemState extends State<GridItem> {
                   Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: CustomText(
-                      text: widget.subTitle,
+                      text: widget.meal.subTitle,
                       fontSize: 14,
                     ),
                   ),
@@ -100,7 +110,7 @@ class _GridItemState extends State<GridItem> {
                             width: 10.0,
                           ),
                           CustomText(
-                            text: widget.title,
+                            text: widget.meal.title,
                             color: Colors.amber,
                           )
                         ],

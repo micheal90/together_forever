@@ -5,18 +5,22 @@ class Meal {
   String subTitle;
   String imageUrl;
   double price;
-  Meal(
-      {required this.title,
-      required this.subTitle,
-      required this.imageUrl,
-      required this.price});
+  bool isFavorite;
+  Meal({
+    required this.title,
+    required this.subTitle,
+    required this.imageUrl,
+    required this.price,
+    this.isFavorite = false,
+  });
 
   Map<String, dynamic> toMap() {
     return {
       'title': title,
       'subTitle': subTitle,
       'imageUrl': imageUrl,
-      'price': price
+      'price': price,
+      'isFavorite': isFavorite,
     };
   }
 
@@ -26,6 +30,7 @@ class Meal {
       subTitle: map['subTitle'],
       imageUrl: map['imageUrl'],
       price: map['price'],
+      isFavorite: map['isFavorite'],
     );
   }
 

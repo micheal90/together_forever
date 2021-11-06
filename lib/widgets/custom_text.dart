@@ -9,21 +9,22 @@ class CustomText extends StatelessWidget {
   final TextOverflow? overflow;
   final double? height;
   final int? maxLines;
-
-  CustomText(
-      {this.text = "",
+///fonstSize=16, alignment=Alignment.centerLeft, 
+  const CustomText(
+      {Key? key, this.text = "",
       this.fontSize = 16,
       this.color = Colors.black,
-      this.alignment = Alignment.topLeft,
+      this.alignment = Alignment.centerLeft,
       this.overflow,
       this.height,
       this.maxLines,
-      this.fontWeight});
+      this.fontWeight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: alignment,
+     
       child: Text(text!,
           overflow: overflow,
           maxLines: maxLines,
@@ -31,7 +32,9 @@ class CustomText extends StatelessWidget {
               fontSize: fontSize,
               fontWeight: fontWeight,
               color: color,
-              height: height)),
+              height: height,
+             
+              )),
     );
   }
 }

@@ -25,177 +25,178 @@ class _GridItemState extends State<GridItem> {
           });
         },
         child: isPressed == false
-            ? Column(
-                children: [
-                  Stack(
-                    children: [
-                      FancyShimmerImage(
-                        imageUrl: widget.meal.imageUrl,
-                        boxFit: BoxFit.cover,
-                        height: 140,
-                      ),
-                      Positioned(
-                          bottom: 2,
-                          right: 0,
-                          child: Container(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.rectangle,
-                                border: Border.all(color: Colors.amber),
-                                borderRadius: const BorderRadius.horizontal(
-                                    left: Radius.circular(15.0))),
-                            child: CustomText(
-                              text: 'Euro ${widget.meal.price}',
-                            ),
-                          ))
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            ? SizedBox(
+                width: 200,
+                child: Column(
+                  children: [
+                    Stack(
                       children: [
-                        CustomText(
-                          text: widget.meal.title,
-                          color: Colors.amber,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                        FancyShimmerImage(
+                          imageUrl: widget.meal.imageUrl,
+                          boxFit: BoxFit.cover,
+                          height: 140,
                         ),
-                        IconButton(
-                            onPressed: () {},
-                            icon: widget.meal.isFavorite
-                                ? const Icon(
-                                    Icons.favorite,
-                                    color: Colors.red,
-                                  )
-                                : const Icon(
-                                    Icons.favorite_border,
-                                    color: Colors.red,
-                                  ))
+                        Positioned(
+                            bottom: 2,
+                            right: 0,
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.rectangle,
+                                  border: Border.all(color: Colors.amber),
+                                  borderRadius: const BorderRadius.horizontal(
+                                      left: Radius.circular(15.0))),
+                              child: CustomText(
+                                text: 'Euro ${widget.meal.price}',
+                              ),
+                            ))
                       ],
                     ),
-                  ),
-                  const Divider(
-                    color: Colors.amber,
-                    endIndent: 30,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: CustomText(
-                      text: widget.meal.subTitle,
-                      fontSize: 14,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: CustomText(
+                            text: widget.meal.title,
+                            color: Colors.amber,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: IconButton(
+                              onPressed: () {},
+                              icon: widget.meal.isFavorite
+                                  ? const Icon(
+                                      Icons.favorite,
+                                      color: Colors.red,
+                                    )
+                                  : const Icon(
+                                      Icons.favorite_border,
+                                      color: Colors.red,
+                                    )),
+                        )
+                      ],
                     ),
-                  ),
-                ],
+                    const Divider(
+                      color: Colors.amber,
+                      endIndent: 30,
+                      height: 0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: CustomText(
+                        text: widget.meal.subTitle,
+                        fontSize: 14,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
+                    ),
+                  ],
+                ),
               )
             : Container(
                 color: Colors.grey.shade100,
-                child: Stack(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Positioned(
-                      top: 20,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  isPressed = false;
-                                });
-                              },
-                              icon: const Icon(Icons.arrow_back)),
-                          const SizedBox(
-                            width: 10.0,
-                          ),
-                          CustomText(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isPressed = false;
+                              });
+                            },
+                            icon: const Icon(Icons.arrow_back)),
+                        Expanded(
+                          child: CustomText(
                             text: widget.meal.title,
                             color: Colors.amber,
-                          )
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                            padding: const EdgeInsets.only(bottom: 30.0),
+                            onPressed: () {
+                              setState(() {
+                                if (count > 1) {
+                                  count--;
+                                }
+                              });
+                            },
+                            icon: const Icon(
+                              Icons.minimize,
+                              size: 35,
+                            )),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          count.toString(),
+                          style: const TextStyle(
+                              color: Colors.amber,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              setState(() {
+                                count++;
+                              });
+                            },
+                            icon: const Icon(
+                              Icons.add,
+                              size: 35,
+                            )),
+                      ],
+                    ),
+                    IntrinsicWidth(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Divider(
+                            color: Colors.amber,
+                          ),
+                          IntrinsicHeight(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                TextButton(
+                                    onPressed: () {},
+                                    child: const Text('ADD Quick',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold))),
+                                const VerticalDivider(
+                                  color: Colors.amber,
+                                ),
+                                TextButton(
+                                    onPressed: () {},
+                                    child: const Text('CUSTOMIZE',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold))),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                    Align(
-                        alignment: Alignment.center,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                padding: const EdgeInsets.only(bottom: 30.0),
-                                onPressed: () {
-                                  setState(() {
-                                    if (count > 1) {
-                                      count--;
-                                    }
-                                  });
-                                },
-                                icon: const Icon(
-                                  Icons.minimize,
-                                  size: 35,
-                                )),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              count.toString(),
-                              style: const TextStyle(
-                                  color: Colors.amber,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    count++;
-                                  });
-                                },
-                                icon: const Icon(
-                                  Icons.add,
-                                  size: 35,
-                                )),
-                          ],
-                        )),
-                    Positioned(
-                        bottom: 20,
-                        left: 0,
-                        right: 0,
-                        child: IntrinsicWidth(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const Divider(
-                                color: Colors.amber,
-                              ),
-                              IntrinsicHeight(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    TextButton(
-                                        onPressed: () {},
-                                        child: const Text('ADD Quick',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold))),
-                                    const VerticalDivider(
-                                      color: Colors.amber,
-                                    ),
-                                    TextButton(
-                                        onPressed: () {},
-                                        child: const Text('CUSTOMIZE',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold))),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        )),
                   ],
                 ),
               ));

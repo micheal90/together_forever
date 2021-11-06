@@ -9,12 +9,12 @@ class CustomText extends StatelessWidget {
   final TextOverflow? overflow;
   final double? height;
   final int? maxLines;
-
+///fonstSize=16, alignment=Alignment.centerLeft, 
   const CustomText(
       {Key? key, this.text = "",
       this.fontSize = 16,
       this.color = Colors.black,
-      this.alignment = Alignment.topLeft,
+      this.alignment = Alignment.centerLeft,
       this.overflow,
       this.height,
       this.maxLines,

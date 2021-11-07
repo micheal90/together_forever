@@ -21,3 +21,5 @@ Map<int, Color> color = {
 };
 const double KBorderRadius = 15.0;
 const double KPadding = 15.0;
+// ignore: constant_identifier_names
+enum Customization { REGULAR, LESS, REMOVE }

@@ -5,12 +5,14 @@ class Meal {
   String subTitle;
   String imageUrl;
   double price;
+  List<Map<String,String>> customizeIngrediants;
   bool isFavorite;
   Meal({
     required this.title,
     required this.subTitle,
     required this.imageUrl,
     required this.price,
+    required this.customizeIngrediants,
     this.isFavorite = false,
   });
 
@@ -20,6 +22,7 @@ class Meal {
       'subTitle': subTitle,
       'imageUrl': imageUrl,
       'price': price,
+      'customizeIngrediants': customizeIngrediants,
       'isFavorite': isFavorite,
     };
   }
@@ -30,6 +33,7 @@ class Meal {
       subTitle: map['subTitle'],
       imageUrl: map['imageUrl'],
       price: map['price'],
+      customizeIngrediants: List<Map<String,String>>.from(map['customizeIngrediants']?.map((x) => x)),
       isFavorite: map['isFavorite'],
     );
   }

@@ -11,31 +11,54 @@ class TabBarItem extends StatelessWidget {
   final items = {
     'Sandwitch': [
       Meal(
-        title: 'Big Mac Burger Big Mac Burger',
-        subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
-        imageUrl:
-            'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-        price: 5.0,
-        isFavorite: true,
-      ),
+          title: 'Big Mac Burger Big Mac Burger',
+          subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
+          imageUrl:
+              'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
+          price: 5.0,
+          isFavorite: true,
+          customizeIngrediants: [
+            {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+            {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+            {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+            {'ingrediant': 'Frise', 'value': 'REGULAR'},
+          ]),
       Meal(
           title: 'Big Mac Burger',
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
           imageUrl:
               'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 3.0),
+          price: 3.0,
+          customizeIngrediants: [
+            {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+            {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+            {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+            {'ingrediant': 'Frise', 'value': 'REGULAR'},
+          ]),
       Meal(
           title: 'Big Mac Burger',
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
           imageUrl:
               'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 3.0),
+          price: 3.0,
+          customizeIngrediants: [
+            {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+            {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+            {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+            {'ingrediant': 'Frise', 'value': 'REGULAR'},
+          ]),
       Meal(
           title: 'Big Mac Burger',
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
           imageUrl:
               'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 6.0),
+          price: 6.0,
+          customizeIngrediants: [
+            {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+            {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+            {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+            {'ingrediant': 'Frise', 'value': 'REGULAR'},
+          ]),
     ],
     'Pizza': [
       Meal(
@@ -43,13 +66,25 @@ class TabBarItem extends StatelessWidget {
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
           imageUrl:
               'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 3.0),
+          price: 3.0,
+          customizeIngrediants: [
+            {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+            {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+            {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+            {'ingrediant': 'Frise', 'value': 'REGULAR'},
+          ]),
       Meal(
           title: 'Big Mac Burger',
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
           imageUrl:
               'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 7.0),
+          price: 7.0,
+          customizeIngrediants: [
+            {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+            {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+            {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+            {'ingrediant': 'Frise', 'value': 'REGULAR'},
+          ]),
     ],
     'Meal': [
       Meal(
@@ -57,7 +92,13 @@ class TabBarItem extends StatelessWidget {
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
           imageUrl:
               'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 3.0),
+          price: 3.0,
+          customizeIngrediants: [
+            {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+            {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+            {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+            {'ingrediant': 'Frise', 'value': 'REGULAR'},
+          ]),
     ],
   };
 
@@ -66,11 +107,11 @@ class TabBarItem extends StatelessWidget {
     return GridView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 2.0),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-        childAspectRatio: 3 / 4,
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 5,
-        maxCrossAxisExtent: 250,mainAxisExtent: 250
-      ),
+          childAspectRatio: 3 / 4,
+          crossAxisSpacing: 5,
+          mainAxisSpacing: 5,
+          maxCrossAxisExtent: 250,
+          mainAxisExtent: 250),
       itemCount: items[category]!.length,
       itemBuilder: (BuildContext context, int index) => GridItem(
         meal: items[category]![index],

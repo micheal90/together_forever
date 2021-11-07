@@ -1,10 +1,36 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:together_forever/models/meal_model.dart';
 import 'package:together_forever/widgets/custom_text.dart';
+import 'package:together_forever/widgets/customization_widget.dart';
 
-class CustomizeScreen extends StatelessWidget {
+class CustomizeScreen extends StatefulWidget {
   const CustomizeScreen({Key? key}) : super(key: key);
   static const routeName = '/customizeScreen';
+
+  @override
+  State<CustomizeScreen> createState() => _CustomizeScreenState();
+}
+
+class _CustomizeScreenState extends State<CustomizeScreen> {
+  late Meal meal;
+  @override
+  void initState() {
+    super.initState();
+    meal = Meal(
+        title: 'title',
+        subTitle: 'subTitle',
+        imageUrl:
+            'https://image.freepik.com/free-photo/turkish-pide-with-minced-meat-kiymali-pide-traditional-turkish-cuisine-turkish-pizza-pita-with-meat-top-view-overhead_2829-20272.jpg',
+        price: 5.0,
+        customizeIngrediants: [
+          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+          {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +41,16 @@ class CustomizeScreen extends StatelessWidget {
             pinned: true,
             snap: true,
             floating: true,
-            expandedHeight: 150,
+            expandedHeight: 180,
+            leading: IconButton(
+                onPressed: () => Get.back(),
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                )),
             flexibleSpace: FlexibleSpaceBar(
               background: FancyShimmerImage(
-                imageUrl:
-                    'https://image.freepik.com/free-photo/turkish-pide-with-minced-meat-kiymali-pide-traditional-turkish-cuisine-turkish-pizza-pita-with-meat-top-view-overhead_2829-20272.jpg',
+                imageUrl: meal.imageUrl,
                 boxFit: BoxFit.cover,
               ),
               title: const Text(
@@ -34,35 +65,9 @@ class CustomizeScreen extends StatelessWidget {
               delegate: SliverChildListDelegate([
             Column(
               children: [
-                Container(
-                  color: Colors.grey.shade300,
-                  padding: const EdgeInsets.all(15.0),
-                  child: const CustomText(
-                    text: 'Customization',
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                CustomizationWidget(
+                  meal: meal,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    CustomText(text: 'Regular'),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
-                    CustomText(text: 'Less'),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
-                    CustomText(text: 'Remove'),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
-                  ],
-                ),
-                Row(children: [
-                  
-                ],)
               ],
             )
           ]))

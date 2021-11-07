@@ -1,7 +1,9 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:get/get.dart';
 import 'package:together_forever/models/meal_model.dart';
+import 'package:together_forever/screens/customize_screen/customize_screen.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 
 class GridItem extends StatefulWidget {
@@ -186,7 +188,8 @@ class _GridItemState extends State<GridItem> {
                                   color: Colors.amber,
                                 ),
                                 TextButton(
-                                    onPressed: () {},
+                                    onPressed: () =>
+                                        Get.toNamed(CustomizeScreen.routeName),
                                     child: const Text('CUSTOMIZE',
                                         style: TextStyle(
                                             color: Colors.black,

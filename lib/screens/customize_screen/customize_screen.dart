@@ -2,6 +2,9 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/models/meal_model.dart';
+import 'package:together_forever/widgets/booster_item.dart';
+import 'package:together_forever/widgets/booster_widget.dart';
+import 'package:together_forever/widgets/custom_label.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 import 'package:together_forever/widgets/customization_widget.dart';
 
@@ -29,7 +32,8 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
           {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
           {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
           {'ingrediant': 'Frise', 'value': 'REGULAR'},
-        ]);
+        ],
+        booster: 'Regular');
   }
 
   @override
@@ -68,6 +72,7 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
                 CustomizationWidget(
                   meal: meal,
                 ),
+                BoosterWidget(meal: meal),
               ],
             )
           ]))
@@ -76,3 +81,5 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
     );
   }
 }
+
+

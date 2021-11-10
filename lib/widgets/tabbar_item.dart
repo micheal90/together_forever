@@ -22,7 +22,8 @@ class TabBarItem extends StatelessWidget {
             {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
             {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
             {'ingrediant': 'Frise', 'value': 'REGULAR'},
-          ]),
+          ],
+          booster: 'REGULAR'),
       Meal(
           title: 'Big Mac Burger',
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
@@ -34,7 +35,8 @@ class TabBarItem extends StatelessWidget {
             {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
             {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
             {'ingrediant': 'Frise', 'value': 'REGULAR'},
-          ]),
+          ],
+          booster: 'REGULAR'),
       Meal(
           title: 'Big Mac Burger',
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
@@ -46,7 +48,8 @@ class TabBarItem extends StatelessWidget {
             {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
             {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
             {'ingrediant': 'Frise', 'value': 'REGULAR'},
-          ]),
+          ],
+          booster: 'REGULAR'),
       Meal(
           title: 'Big Mac Burger',
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
@@ -58,7 +61,8 @@ class TabBarItem extends StatelessWidget {
             {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
             {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
             {'ingrediant': 'Frise', 'value': 'REGULAR'},
-          ]),
+          ],
+          booster: 'REGULAR'),
     ],
     'Pizza': [
       Meal(
@@ -72,7 +76,8 @@ class TabBarItem extends StatelessWidget {
             {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
             {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
             {'ingrediant': 'Frise', 'value': 'REGULAR'},
-          ]),
+          ],
+          booster: 'REGULAR'),
       Meal(
           title: 'Big Mac Burger',
           subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
@@ -84,7 +89,8 @@ class TabBarItem extends StatelessWidget {
             {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
             {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
             {'ingrediant': 'Frise', 'value': 'REGULAR'},
-          ]),
+          ],
+          booster: 'REGULAR'),
     ],
     'Meal': [
       Meal(
@@ -98,7 +104,8 @@ class TabBarItem extends StatelessWidget {
             {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
             {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
             {'ingrediant': 'Frise', 'value': 'REGULAR'},
-          ]),
+          ],
+          booster: 'REGULAR'),
     ],
   };
 

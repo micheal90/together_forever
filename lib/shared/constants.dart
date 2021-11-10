@@ -23,3 +23,11 @@ const double KBorderRadius = 15.0;
 const double KPadding = 15.0;
 // ignore: constant_identifier_names
 enum Customization { REGULAR, LESS, REMOVE }
+enum Booster {
+  REGULAR,
+  FRIES_WITH_PEPCI,
+  FRIES_WITH_DITE_PEPCI,
+  FRIES_WITH_7UP,
+  FRIES_WITH_DITE_7UP,
+  FRIES_WITH_BEER
+}

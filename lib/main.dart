@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'RobotoCondensed',
       ),
       initialRoute: CustomizeScreen.routeName,
+      //initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => ControlScreen()),
         GetPage(

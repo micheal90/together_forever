@@ -2,9 +2,11 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/models/meal_model.dart';
+import 'package:together_forever/widgets/additional_instructions.dart';
 import 'package:together_forever/widgets/adds_widget.dart';
 import 'package:together_forever/widgets/booster_item.dart';
 import 'package:together_forever/widgets/booster_widget.dart';
+import 'package:together_forever/widgets/custom_elevated_button.dart';
 import 'package:together_forever/widgets/custom_label.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 import 'package:together_forever/widgets/customization_widget.dart';
@@ -33,9 +35,7 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
         {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
         {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
         {'ingrediant': 'Frise', 'value': 'REGULAR'},
-        {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
-        {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
-        {'ingrediant': 'Frise', 'value': 'REGULAR'},
+ 
       ],
       booster: 'Regular',
       adds: [
@@ -85,8 +85,19 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
                 AddsWidget(
                   meal: meal,
                 ),
+                const AdditionalInstuctions(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 10),
+                  child: CustomElevatedButton(
+                    text: 'ADD TO CART',
+                    onPressed: () {
+                      debugPrint(meal.toMap().toString());
+                    },
+                  ),
+                )
               ],
-            )
+            ),
           ]))
         ],
       ),

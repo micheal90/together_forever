@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:together_forever/widgets/custom_text.dart';
+
 import 'package:together_forever/shared/constants.dart';
-
-
+import 'package:together_forever/widgets/custom_text.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String? text;
   final Function? onPressed;
 
-  const CustomElevatedButton({this.text, this.onPressed});
+  const CustomElevatedButton({
+    Key? key,
+    this.text,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

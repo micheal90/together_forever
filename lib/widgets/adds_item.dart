@@ -40,7 +40,7 @@ class _AddsItemState extends State<AddsItem> {
           : FittedBox(
               child: Row(
                 children: [
-                  Text('x $count'),
+                  Text('$count x'),
                   IconButton(
                       onPressed: () => setState(() => count = 0),
                       icon: const Icon(

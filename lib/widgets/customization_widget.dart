@@ -4,17 +4,11 @@ import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/widgets/booster_item.dart';
 import 'package:together_forever/widgets/custom_label.dart';
 import 'package:together_forever/widgets/custom_text.dart';
+import 'package:together_forever/widgets/customize_item.dart';
 
-class CustomizationWidget extends StatefulWidget {
+class CustomizationWidget extends StatelessWidget {
   const CustomizationWidget({required this.meal, Key? key}) : super(key: key);
   final Meal meal;
-
-  @override
-  State<CustomizationWidget> createState() => _CustomizationWidgetState();
-}
-
-class _CustomizationWidgetState extends State<CustomizationWidget> {
-  Customization? _customization = Customization.REGULAR;
 
   @override
   Widget build(BuildContext context) {
@@ -50,69 +44,17 @@ class _CustomizationWidgetState extends State<CustomizationWidget> {
             ],
           ),
         ),
-        customizeItem(),
+        ListView.builder(
+          shrinkWrap: true,
+          padding: EdgeInsets.zero,
+          physics: const NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) => CustomizeItem(
+            meal: meal,
+            index: index,
+          ),
+          itemCount: meal.customizeIngrediants.length,
+        ),
       ],
     );
-  }
-
-  SizedBox customizeItem() {
-    return SizedBox(
-        height: 200,
-        child: ListView.builder(
-          padding: EdgeInsets.zero,
-          itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomText(
-                  text: widget.meal.customizeIngrediants[index]['ingrediant'],
-                ),
-                Row(
-                  children: [
-                    Radio(
-                      value: Customization.REGULAR,
-                      groupValue: _customization,
-                      onChanged: (Customization? value) => setState(() {
-                        _customization = value;
-                        widget.meal.customizeIngrediants[index]['value'] =
-                            value.toString();
-                      }),
-                    ),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
-                    Radio(
-                      value: Customization.LESS,
-                      groupValue: _customization,
-                      onChanged: (Customization? value) => setState(() {
-                        _customization = value;
-                        widget.meal.customizeIngrediants[index]['value'] =
-                            value.toString();
-                      }),
-                    ),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
-                    Radio(
-                      value: Customization.REMOVE,
-                      groupValue: _customization,
-                      onChanged: (Customization? value) => setState(() {
-                        _customization = value;
-                        widget.meal.customizeIngrediants[index]['value'] =
-                            value.toString();
-                      }),
-                    ),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          itemCount: widget.meal.customizeIngrediants.length,
-        ),
-      );
   }
 }

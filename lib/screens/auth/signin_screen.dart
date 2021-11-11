@@ -10,6 +10,7 @@ import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/widgets/custom_elevated_button.dart';
 
 class SignInScreen extends StatelessWidget {
+  SignInScreen({Key? key}) : super(key: key);
   final GlobalKey<FormState> _formKey = GlobalKey();
 
   @override
@@ -25,9 +26,10 @@ class SignInScreen extends StatelessWidget {
         ),
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 10, left: 20, right: 30),
+            padding:
+                const EdgeInsets.only(top: 10, left: 20, right: 30, bottom: 10),
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -35,13 +37,13 @@ class SignInScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomText(
+                        const CustomText(
                           text: 'Together Forever',
-                          fontSize: 40,
+                          fontSize: 30,
                         ),
                         GestureDetector(
                           onTap: () => Get.to(SignUpScreen()),
-                          child: CustomText(
+                          child: const CustomText(
                             text: 'Sign Up',
                             fontSize: 18,
                             color: KPrimaryColor,
@@ -49,14 +51,14 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    CustomText(
+                    const CustomText(
                       text: 'Sign in to Continue',
                       color: Colors.grey,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     // SvgPicture.asset(
@@ -70,12 +72,13 @@ class SignInScreen extends StatelessWidget {
                       height: 150,
                       width: 150,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     CustomTextFormField(
                       text: 'Email',
                       hint: 'example@gmail.com',
+                      keyboardType: TextInputType.emailAddress,
                       validator: (String? value) {
                         if (!GetUtils.isEmail(value!.trim())) {
                           return 'Enter a valid email';
@@ -86,23 +89,24 @@ class SignInScreen extends StatelessWidget {
                         controller.email = value!.trim();
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     CustomTextFormField(
                       text: 'Password',
                       hint: '*********',
+                      keyboardType: TextInputType.visiblePassword,
                       suffixIcon: controller.passwordShow.value
                           ? GestureDetector(
                               onTap: () => controller.changeVisibilePassword(),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.visibility_off,
                                 color: KPrimaryColor,
                               ),
                             )
                           : GestureDetector(
                               onTap: () => controller.changeVisibilePassword(),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.visibility,
                                 color: KPrimaryColor,
                               ),
@@ -118,19 +122,19 @@ class SignInScreen extends StatelessWidget {
                         controller.password = value!.trim();
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    CustomText(
+                    const CustomText(
                       text: 'Forgot Password?',
                       alignment: Alignment.topRight,
                       fontSize: 14,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     controller.loading.value
-                        ? CircularProgressIndicator()
+                        ? const CircularProgressIndicator()
                         : CustomElevatedButton(
                             text: 'SIGN IN',
                             onPressed: () {
@@ -141,15 +145,15 @@ class SignInScreen extends StatelessWidget {
                               }
                             },
                           ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    CustomText(
+                    const CustomText(
                       text: '-OR-',
                       fontSize: 18,
                       alignment: Alignment.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -163,7 +167,7 @@ class SignInScreen extends StatelessWidget {
                             width: 50,
                             height: 50,
                           )),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       IconButton(

@@ -15,8 +15,8 @@ import 'package:together_forever/screens/auth/otp_screen.dart';
 import 'package:together_forever/screens/control_screen.dart';
 
 class Authcontroller extends GetxController {
- final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
- final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   String? email, password, name, imageUrl;
   String code = '+961'; //'+49';
   String? phone;
@@ -105,7 +105,6 @@ class Authcontroller extends GetxController {
           .createUserWithEmailAndPassword(email: email!, password: password!)
           .then((user) async {
         saveUser(user);
-
         Get.offAll(ControlScreen());
       });
     } on FirebaseException catch (e) {
@@ -114,6 +113,10 @@ class Authcontroller extends GetxController {
     }
     loading.value = false;
     update();
+  }
+
+  void signOut() {
+    _firebaseAuth.signOut();
   }
 
   void saveUser(UserCredential userCredential) async {
@@ -134,9 +137,10 @@ class Authcontroller extends GetxController {
             : userCredential.user!.photoURL != null
                 ? userCredential.user!.photoURL
                 : '');
-    await FireStoreUser.addUserToFireStore(userModel);
+    await FireStoreUser.addUserToFireStore(userModel)
+        .then((value) => debugPrint('setUser'));
     //await setUserDataLocal(await userCredential.user!.getIdToken());
-    print('setUser');
+
     update();
   }
 

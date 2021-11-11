@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'dart:ffi';
+
 class Meal {
   String title;
   String subTitle;
@@ -7,6 +9,8 @@ class Meal {
   double price;
   List<Map<String, String>> customizeIngrediants;
   String booster;
+    List<Map<String, dynamic>> adds;
+
   bool isFavorite;
   Meal({
     required this.title,
@@ -15,6 +19,7 @@ class Meal {
     required this.price,
     required this.customizeIngrediants,
     required this.booster,
+    required this.adds,
     this.isFavorite = false,
   });
 
@@ -26,6 +31,7 @@ class Meal {
       'price': price,
       'customizeIngrediants': customizeIngrediants,
       'booster': booster,
+      'adds': adds,
       'isFavorite': isFavorite,
     };
   }
@@ -38,6 +44,7 @@ class Meal {
       price: map['price'],
       customizeIngrediants: List<Map<String, String>>.from(map['customizeIngrediants']?.map((x) => x)),
       booster: map['booster'],
+      adds: List<Map<String, String>>.from(map['adds']?.map((x) => x)),
       isFavorite: map['isFavorite'],
     );
   }

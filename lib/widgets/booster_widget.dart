@@ -59,17 +59,17 @@ class _BoosterWidgetState extends State<BoosterWidget> {
 
   convertToString(Booster value) {
     if (value == Booster.REGULAR) {
-      return 'Regular + 1.5 Euro';
+      return 'Regular';
     } else if (value == Booster.FRIES_WITH_PEPCI) {
-      return 'Fries whith pepci + 1.5 Euro';
+      return 'Fries with pepci + 1.5 Euro';
     } else if (value == Booster.FRIES_WITH_DITE_PEPCI) {
-      return 'Fries whith dite pepci + 1.5 Euro';
+      return 'Fries with dite pepci + 1.5 Euro';
     } else if (value == Booster.FRIES_WITH_7UP) {
-      return 'Fries whith 7up + 1.5 Euro';
+      return 'Fries with 7up + 1.5 Euro';
     } else if (value == Booster.FRIES_WITH_DITE_7UP) {
-      return 'Fries whith dite 7up + 1.5 Euro';
+      return 'Fries with dite 7up + 1.5 Euro';
     } else {
-      return 'Fries whith beer + 2 Euro';
+      return 'Fries with beer + 2 Euro';
     }
   }
 }

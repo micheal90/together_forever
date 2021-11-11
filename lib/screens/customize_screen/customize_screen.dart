@@ -2,6 +2,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/models/meal_model.dart';
+import 'package:together_forever/widgets/adds_widget.dart';
 import 'package:together_forever/widgets/booster_item.dart';
 import 'package:together_forever/widgets/booster_widget.dart';
 import 'package:together_forever/widgets/custom_label.dart';
@@ -22,18 +23,28 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
   void initState() {
     super.initState();
     meal = Meal(
-        title: 'title',
-        subTitle: 'subTitle',
-        imageUrl:
-            'https://image.freepik.com/free-photo/turkish-pide-with-minced-meat-kiymali-pide-traditional-turkish-cuisine-turkish-pizza-pita-with-meat-top-view-overhead_2829-20272.jpg',
-        price: 5.0,
-        customizeIngrediants: [
-          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
-          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
-          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
-          {'ingrediant': 'Frise', 'value': 'REGULAR'},
-        ],
-        booster: 'Regular');
+      title: 'title',
+      subTitle: 'subTitle',
+      imageUrl:
+          'https://image.freepik.com/free-photo/turkish-pide-with-minced-meat-kiymali-pide-traditional-turkish-cuisine-turkish-pizza-pita-with-meat-top-view-overhead_2829-20272.jpg',
+      price: 5.0,
+      customizeIngrediants: [
+        {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+        {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+        {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+        {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+        {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+        {'ingrediant': 'Frise', 'value': 'REGULAR'},
+      ],
+      booster: 'Regular',
+      adds: [
+        {'title': 'CORN', 'price': 0.5},
+        {'title': 'CHEDDER CHEESE', 'price': 0.5},
+        {'title': 'EXTRA CHEESE', 'price': 1},
+        {'title': 'HOT SOUCE', 'price': 0.5},
+      ],
+    );
   }
 
   @override
@@ -43,8 +54,6 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
         slivers: [
           SliverAppBar(
             pinned: true,
-            snap: true,
-            floating: true,
             expandedHeight: 180,
             leading: IconButton(
                 onPressed: () => Get.back(),
@@ -73,6 +82,9 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
                   meal: meal,
                 ),
                 BoosterWidget(meal: meal),
+                AddsWidget(
+                  meal: meal,
+                ),
               ],
             )
           ]))
@@ -81,5 +93,3 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
     );
   }
 }
-
-

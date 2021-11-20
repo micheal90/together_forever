@@ -11,53 +11,157 @@ class TabBarItem extends StatelessWidget {
   final items = {
     'Sandwitch': [
       Meal(
+        id: '1',
         title: 'Big Mac Burger Big Mac Burger',
         subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
         imageUrl:
             'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
         price: 5.0,
         isFavorite: true,
+        customizeIngrediants: [
+          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+          {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        ],
+        booster: 'REGULAR',
+        adds: [
+          {'title': 'CORN', 'PRICE': 0.5},
+          {'title': 'CHEDDER CHEESE', 'PRICE': 0.5},
+          {'title': 'EXTRA CHEESE', 'PRICE': 1},
+          {'title': 'HOT SOUCE', 'PRICE': 0.5},
+        ],
       ),
       Meal(
-          title: 'Big Mac Burger',
-          subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
-          imageUrl:
-              'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 3.0),
+        id: '2',
+        title: 'Big Mac Burger',
+        subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
+        imageUrl:
+            'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
+        price: 3.0,
+        customizeIngrediants: [
+          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+          {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        ],
+        booster: 'REGULAR',
+        adds: [
+          {'title': 'CORN', 'PRICE': 0.5},
+          {'title': 'CHEDDER CHEESE', 'PRICE': 0.5},
+          {'title': 'EXTRA CHEESE', 'PRICE': 1},
+          {'title': 'HOT SOUCE', 'PRICE': 0.5},
+        ],
+      ),
       Meal(
-          title: 'Big Mac Burger',
-          subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
-          imageUrl:
-              'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 3.0),
+        id: '3',
+        title: 'Big Mac Burger',
+        subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
+        imageUrl:
+            'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
+        price: 3.0,
+        customizeIngrediants: [
+          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+          {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        ],
+        booster: 'REGULAR',
+        adds: [
+          {'title': 'CORN', 'PRICE': 0.5},
+          {'title': 'CHEDDER CHEESE', 'PRICE': 0.5},
+          {'title': 'EXTRA CHEESE', 'PRICE': 1},
+          {'title': 'HOT SOUCE', 'PRICE': 0.5},
+        ],
+      ),
       Meal(
-          title: 'Big Mac Burger',
-          subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
-          imageUrl:
-              'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 6.0),
+        id: '4',
+        title: 'Big Mac Burger',
+        subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
+        imageUrl:
+            'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
+        price: 6.0,
+        customizeIngrediants: [
+          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+          {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        ],
+        booster: 'REGULAR',
+        adds: [
+          {'title': 'CORN', 'PRICE': 0.5},
+          {'title': 'CHEDDER CHEESE', 'PRICE': 0.5},
+          {'title': 'EXTRA CHEESE', 'PRICE': 1},
+          {'title': 'HOT SOUCE', 'PRICE': 0.5},
+        ],
+      ),
     ],
     'Pizza': [
       Meal(
-          title: 'Big Mac Burger',
-          subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
-          imageUrl:
-              'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 3.0),
+        id: '5',
+        title: 'Big Mac Burger',
+        subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
+        imageUrl:
+            'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
+        price: 3.0,
+        customizeIngrediants: [
+          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+          {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        ],
+        booster: 'REGULAR',
+        adds: [
+          {'title': 'CORN', 'PRICE': 0.5},
+          {'title': 'CHEDDER CHEESE', 'PRICE': 0.5},
+          {'title': 'EXTRA CHEESE', 'PRICE': 1},
+          {'title': 'HOT SOUCE', 'PRICE': 0.5},
+        ],
+      ),
       Meal(
-          title: 'Big Mac Burger',
-          subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
-          imageUrl:
-              'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 7.0),
+        id: '6',
+        title: 'Big Mac Burger',
+        subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
+        imageUrl:
+            'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
+        price: 7.0,
+        customizeIngrediants: [
+          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+          {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        ],
+        booster: 'REGULAR',
+        adds: [
+          {'title': 'CORN', 'PRICE': 0.5},
+          {'title': 'CHEDDER CHEESE', 'PRICE': 0.5},
+          {'title': 'EXTRA CHEESE', 'PRICE': 1},
+          {'title': 'HOT SOUCE', 'PRICE': 0.5},
+        ],
+      ),
     ],
     'Meal': [
       Meal(
-          title: 'Big Mac Burger',
-          subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
-          imageUrl:
-              'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
-          price: 3.0),
+        id: '7',
+        title: 'Big Mac Burger',
+        subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
+        imageUrl:
+            'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?size=338&ext=jpg',
+        price: 3.0,
+        customizeIngrediants: [
+          {'ingrediant': 'Tomato', 'value': 'REGULAR'},
+          {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
+          {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
+          {'ingrediant': 'Frise', 'value': 'REGULAR'},
+        ],
+        booster: 'REGULAR',
+        adds: [
+          {'title': 'CORN', 'PRICE': 0.5},
+          {'title': 'CHEDDER CHEESE', 'PRICE': 0.5},
+          {'title': 'EXTRA CHEESE', 'PRICE': 1},
+          {'title': 'HOT SOUCE', 'PRICE': 0.5},
+        ],
+      ),
     ],
   };
 
@@ -66,11 +170,11 @@ class TabBarItem extends StatelessWidget {
     return GridView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 2.0),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-        childAspectRatio: 3 / 4,
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 5,
-        maxCrossAxisExtent: 250,mainAxisExtent: 250
-      ),
+          childAspectRatio: 3 / 4,
+          crossAxisSpacing: 5,
+          mainAxisSpacing: 5,
+          maxCrossAxisExtent: 250,
+          mainAxisExtent: 250),
       itemCount: items[category]!.length,
       itemBuilder: (BuildContext context, int index) => GridItem(
         meal: items[category]![index],

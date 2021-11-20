@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/controllers/auth_controller.dart';
@@ -11,6 +10,8 @@ import 'package:together_forever/widgets/custom_text_form_field.dart';
 class SignUpScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey();
 
+  SignUpScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<Authcontroller>(
@@ -20,33 +21,34 @@ class SignUpScreen extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.transparent,
           leading: IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.black,
             ),
-            onPressed: () => Get.offAll(SignInScreen()),
+            onPressed: () => Get.back(),
           ),
         ),
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 10, left: 20, right: 30),
+            padding:
+                const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
             child: SingleChildScrollView(
               child: Form(
                 key: _formKey,
                 child: Column(
                   children: [
-                    CustomText(
+                    const CustomText(
                       text: 'Together Forever',
-                      fontSize: 40,
+                      fontSize: 30,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    CustomText(
+                    const CustomText(
                       text: 'SignUp to Continue',
                       color: Colors.grey,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Image.asset(
@@ -54,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
                       height: 150,
                       width: 150,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     CustomTextFormField(
@@ -70,7 +72,7 @@ class SignUpScreen extends StatelessWidget {
                         controller.name = value!.trim();
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     CustomTextFormField(
@@ -85,24 +87,26 @@ class SignUpScreen extends StatelessWidget {
                       onSave: (String? value) {
                         controller.email = value!.trim();
                       },
+                      keyboardType: TextInputType.emailAddress,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     CustomTextFormField(
                       text: 'Password',
                       hint: '*********',
+                      keyboardType: TextInputType.visiblePassword,
                       suffixIcon: controller.passwordShow.value
                           ? GestureDetector(
                               onTap: () => controller.changeVisibilePassword(),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.visibility_off,
                                 color: KPrimaryColor,
                               ),
                             )
                           : GestureDetector(
                               onTap: () => controller.changeVisibilePassword(),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.visibility,
                                 color: KPrimaryColor,
                               ),
@@ -118,11 +122,11 @@ class SignUpScreen extends StatelessWidget {
                         controller.password = value!.trim();
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 60,
                     ),
                     controller.loading.value
-                        ? CircularProgressIndicator()
+                        ? const CircularProgressIndicator()
                         : CustomElevatedButton(
                             text: 'SIGN UP',
                             onPressed: () {

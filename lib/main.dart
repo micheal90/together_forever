@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
 
         fontFamily: 'RobotoCondensed',
       ),
-      initialRoute: CustomizeScreen.routeName,
+      //initialRoute: CustomizeScreen.routeName,
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => ControlScreen()),
         GetPage(
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: CustomizeScreen.routeName,
-          page: () =>const CustomizeScreen(),
+          page: () => const CustomizeScreen(),
         )
       ],
     );

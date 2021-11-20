@@ -78,6 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: KScaffoldColor,
       appBar: const CustomAppBar(),
+      
       body: ListView(
         padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
         children: [

@@ -189,7 +189,7 @@ class _GridItemState extends State<GridItem> {
                                 ),
                                 TextButton(
                                     onPressed: () =>
-                                        Get.toNamed(CustomizeScreen.routeName),
+                                        Get.toNamed(CustomizeScreen.routeName,arguments: widget.meal.id),
                                     child: const Text('CUSTOMIZE',
                                         style: TextStyle(
                                             color: Colors.black,

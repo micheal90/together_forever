@@ -11,6 +11,7 @@ class TabBarItem extends StatelessWidget {
   final items = {
     'Sandwitch': [
       Meal(
+        id: '1',
         title: 'Big Mac Burger Big Mac Burger',
         subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
         imageUrl:
@@ -32,6 +33,7 @@ class TabBarItem extends StatelessWidget {
         ],
       ),
       Meal(
+        id: '2',
         title: 'Big Mac Burger',
         subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
         imageUrl:
@@ -52,6 +54,7 @@ class TabBarItem extends StatelessWidget {
         ],
       ),
       Meal(
+        id: '3',
         title: 'Big Mac Burger',
         subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
         imageUrl:
@@ -72,6 +75,7 @@ class TabBarItem extends StatelessWidget {
         ],
       ),
       Meal(
+        id: '4',
         title: 'Big Mac Burger',
         subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
         imageUrl:
@@ -94,6 +98,7 @@ class TabBarItem extends StatelessWidget {
     ],
     'Pizza': [
       Meal(
+        id: '5',
         title: 'Big Mac Burger',
         subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
         imageUrl:
@@ -114,6 +119,7 @@ class TabBarItem extends StatelessWidget {
         ],
       ),
       Meal(
+        id: '6',
         title: 'Big Mac Burger',
         subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
         imageUrl:
@@ -136,6 +142,7 @@ class TabBarItem extends StatelessWidget {
     ],
     'Meal': [
       Meal(
+        id: '7',
         title: 'Big Mac Burger',
         subTitle: 'Sint nisi velit sit laboris adipisicing Lorem.',
         imageUrl:

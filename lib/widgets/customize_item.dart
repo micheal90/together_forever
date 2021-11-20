@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:together_forever/controllers/customize_meal_controller.dart';
 import 'package:together_forever/models/meal_model.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/widgets/custom_text.dart';
@@ -32,7 +34,9 @@ class _CustomizeItemState extends State<CustomizeItem> {
                 groupValue: _customization,
                 onChanged: (Customization? value) => setState(() {
                   _customization = value;
-                  widget.meal.customizeIngrediants[widget.index]['value'] =
+
+                  widget.meal
+                          .customizeIngrediants[widget.index]['value'] =
                       value.toString();
                 }),
               ),
@@ -44,7 +48,8 @@ class _CustomizeItemState extends State<CustomizeItem> {
                 groupValue: _customization,
                 onChanged: (Customization? value) => setState(() {
                   _customization = value;
-                  widget.meal.customizeIngrediants[widget.index]['value'] =
+                  widget.meal
+                          .customizeIngrediants[widget.index]['value'] =
                       value.toString();
                 }),
               ),
@@ -56,7 +61,8 @@ class _CustomizeItemState extends State<CustomizeItem> {
                 groupValue: _customization,
                 onChanged: (Customization? value) => setState(() {
                   _customization = value;
-                  widget.meal.customizeIngrediants[widget.index]['value'] =
+                  widget.meal
+                          .customizeIngrediants[widget.index]['value'] =
                       value.toString();
                 }),
               ),

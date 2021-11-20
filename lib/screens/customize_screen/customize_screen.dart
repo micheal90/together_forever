@@ -1,15 +1,15 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:together_forever/controllers/customize_meal_controller.dart';
 import 'package:together_forever/models/meal_model.dart';
-import 'package:together_forever/widgets/additional_instructions.dart';
-import 'package:together_forever/widgets/adds_widget.dart';
-import 'package:together_forever/widgets/booster_item.dart';
-import 'package:together_forever/widgets/booster_widget.dart';
+import 'package:together_forever/shared/constants.dart';
+import 'package:together_forever/widgets/adds_item.dart';
+import 'package:together_forever/widgets/booster_radio_tile.dart';
 import 'package:together_forever/widgets/custom_elevated_button.dart';
 import 'package:together_forever/widgets/custom_label.dart';
 import 'package:together_forever/widgets/custom_text.dart';
-import 'package:together_forever/widgets/customization_widget.dart';
+import 'package:together_forever/widgets/customize_item.dart';
 
 class CustomizeScreen extends StatefulWidget {
   const CustomizeScreen({Key? key}) : super(key: key);
@@ -20,31 +20,13 @@ class CustomizeScreen extends StatefulWidget {
 }
 
 class _CustomizeScreenState extends State<CustomizeScreen> {
+  // String mealId = Get.arguments;
+  String mealId = '1';
   late Meal meal;
   @override
   void initState() {
     super.initState();
-    meal = Meal(
-      title: 'title',
-      subTitle: 'subTitle',
-      imageUrl:
-          'https://image.freepik.com/free-photo/turkish-pide-with-minced-meat-kiymali-pide-traditional-turkish-cuisine-turkish-pizza-pita-with-meat-top-view-overhead_2829-20272.jpg',
-      price: 5.0,
-      customizeIngrediants: [
-        {'ingrediant': 'Tomato', 'value': 'REGULAR'},
-        {'ingrediant': 'Ketchup', 'value': 'REGULAR'},
-        {'ingrediant': 'Coleslaw', 'value': 'REGULAR'},
-        {'ingrediant': 'Frise', 'value': 'REGULAR'},
- 
-      ],
-      booster: 'Regular',
-      adds: [
-        {'title': 'CORN', 'price': 0.5},
-        {'title': 'CHEDDER CHEESE', 'price': 0.5},
-        {'title': 'EXTRA CHEESE', 'price': 1},
-        {'title': 'HOT SOUCE', 'price': 0.5},
-      ],
-    );
+    meal = Get.find<CustomizeMealController>().findMealById(mealId);
   }
 
   @override
@@ -78,14 +60,10 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
               delegate: SliverChildListDelegate([
             Column(
               children: [
-                CustomizationWidget(
-                  meal: meal,
-                ),
-                BoosterWidget(meal: meal),
-                AddsWidget(
-                  meal: meal,
-                ),
-                const AdditionalInstuctions(),
+                customizeSection(),
+                boosterSection(),
+                addsSection(),
+                additionalSection(),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 20.0, vertical: 10),
@@ -103,4 +81,106 @@ class _CustomizeScreenState extends State<CustomizeScreen> {
       ),
     );
   }
+
+  Widget customizeSection() => Column(
+        children: [
+          const CustomLabel(text: 'Customization'),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: const [
+                CustomText(
+                  text: 'REGULAR',
+                  fontWeight: FontWeight.bold,
+                ),
+                SizedBox(
+                  width: 15.0,
+                ),
+                CustomText(
+                  text: 'LESS',
+                  fontWeight: FontWeight.bold,
+                ),
+                SizedBox(
+                  width: 15.0,
+                ),
+                CustomText(
+                  text: 'REMOVE',
+                  fontWeight: FontWeight.bold,
+                ),
+                SizedBox(
+                  width: 15.0,
+                ),
+              ],
+            ),
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            padding: EdgeInsets.zero,
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) => CustomizeItem(
+              meal: meal,
+              index: index,
+            ),
+            itemCount: meal.customizeIngrediants.length,
+          ),
+        ],
+      );
+  Widget boosterSection() => Column(
+        children: [
+          const CustomLabel(text: 'MEAL BOOSTER'),
+          Column(
+            children: [
+              BoosterRadioTile(meal: meal, value: Booster.REGULAR),
+              BoosterRadioTile(meal: meal, value: Booster.FRIES_WITH_PEPCI),
+              BoosterRadioTile(
+                  meal: meal, value: Booster.FRIES_WITH_DITE_PEPCI),
+              BoosterRadioTile(meal: meal, value: Booster.FRIES_WITH_7UP),
+              BoosterRadioTile(meal: meal, value: Booster.FRIES_WITH_DITE_7UP),
+              BoosterRadioTile(meal: meal, value: Booster.FRIES_WITH_BEER),
+            ],
+          ),
+        ],
+      );
+  Widget addsSection() => Column(
+        children: [
+          const CustomLabel(text: 'ADDS'),
+          ListView.separated(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: meal.adds.length,
+            itemBuilder: (context, index) => AddsItem(
+              meal: meal,
+              index: index,
+            ),
+            separatorBuilder: (context, index) => const Divider(),
+          )
+        ],
+      );
+  Widget additionalSection() => Container(
+        height: 80,
+        margin: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
+        decoration: BoxDecoration(
+          //border: Border.all(),
+          borderRadius: BorderRadius.circular(8.0),
+          color: Colors.grey.shade200,
+        ),
+        child: TextField(
+          decoration: const InputDecoration(
+            hintText: 'Additional Instructions',
+            enabledBorder: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+          ),
+          maxLines: 3,
+          onChanged: (String? value) {
+            setState(() {
+              meal.additional = value;
+            });
+          },
+        ),
+      );
 }

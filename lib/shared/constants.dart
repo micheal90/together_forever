@@ -31,3 +31,18 @@ enum Booster {
   FRIES_WITH_DITE_7UP,
   FRIES_WITH_BEER
 }
+convertBoosterToString(Booster value) {
+    if (value == Booster.REGULAR) {
+      return 'Regular';
+    } else if (value == Booster.FRIES_WITH_PEPCI) {
+      return 'Fries with pepci + 1.5 Euro';
+    } else if (value == Booster.FRIES_WITH_DITE_PEPCI) {
+      return 'Fries with dite pepci + 1.5 Euro';
+    } else if (value == Booster.FRIES_WITH_7UP) {
+      return 'Fries with 7up + 1.5 Euro';
+    } else if (value == Booster.FRIES_WITH_DITE_7UP) {
+      return 'Fries with dite 7up + 1.5 Euro';
+    } else {
+      return 'Fries with beer + 2 Euro';
+    }
+  }

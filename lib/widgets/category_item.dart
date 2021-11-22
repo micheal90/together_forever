@@ -1,7 +1,7 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:together_forever/screens/category_screen/category_screen.dart';
+import 'package:together_forever/views/category_screen/category_screen.dart';
 import 'package:together_forever/shared/size_config.dart';
 
 class CategoryItem extends StatelessWidget {

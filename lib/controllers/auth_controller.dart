@@ -11,8 +11,9 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:together_forever/core/services/cash_helper.dart';
 import 'package:together_forever/core/services/firestore_user.dart';
 import 'package:together_forever/models/user_model.dart';
-import 'package:together_forever/screens/auth/otp_screen.dart';
-import 'package:together_forever/screens/control_screen.dart';
+import 'package:together_forever/views/auth/otp_screen.dart';
+import 'package:together_forever/views/control_screen.dart';
+
 
 class Authcontroller extends GetxController {
   final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
@@ -88,7 +89,7 @@ class Authcontroller extends GetxController {
           .then((user) async {
         getCurrentUserData(user.user!.uid);
         //saveUser(user);
-        Get.offAll(ControlScreen());
+        Get.offAll(const ControlScreen());
       });
     } on FirebaseException catch (e) {
       Get.snackbar("Error LogIn Account", e.message.toString(),
@@ -191,7 +192,7 @@ class Authcontroller extends GetxController {
           _loading.value = false;
           update();
         },
-        timeout: Duration(seconds: 60));
+        timeout:const Duration(seconds: 60));
     print('done');
     update();
   }

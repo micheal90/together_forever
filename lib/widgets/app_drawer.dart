@@ -21,11 +21,6 @@ class AppDrawer extends StatelessWidget {
             child: null,
           ),
           CustomListTileAppBar(
-            leading: Icons.settings,
-            title: 'Settings',
-            onPressed: () {},
-          ),
-          CustomListTileAppBar(
             leading: Icons.shopping_cart_outlined,
             title: 'My Cart',
             onPressed: () {},
@@ -36,8 +31,8 @@ class AppDrawer extends StatelessWidget {
             onPressed: () {},
           ),
           CustomListTileAppBar(
-            leading: Icons.mail,
-            title: 'Contact Us',
+            leading: Icons.settings,
+            title: 'Settings',
             onPressed: () {},
           ),
           CustomListTileAppBar(
@@ -48,6 +43,11 @@ class AppDrawer extends StatelessWidget {
           CustomListTileAppBar(
             leading: Icons.location_on_rounded,
             title: 'Location',
+            onPressed: () {},
+          ),
+          CustomListTileAppBar(
+            leading: Icons.mail,
+            title: 'Contact Us',
             onPressed: () {},
           ),
         ],

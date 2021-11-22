@@ -94,5 +94,32 @@
       loadMainDartJs();
     }
   </script>
+  
+  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAdU94b-IhUa8Q5O_sS4knebZVoWJ_DYYs",
+      authDomain: "together-forever-9ea2f.firebaseapp.com",
+      projectId: "together-forever-9ea2f",
+      storageBucket: "together-forever-9ea2f.appspot.com",
+      messagingSenderId: "923484258295",
+      appId: "1:923484258295:web:43f9c52d3f0128cc0ff8f2",
+      measurementId: "G-3BQ32LNTGW"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
 </body>
 </html>

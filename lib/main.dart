@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/core/services/cash_helper.dart';
 import 'package:together_forever/views/category_screen/category_screen.dart';
+import 'package:together_forever/views/checkout_screen/checkout_screen.dart';
 import 'package:together_forever/views/customize_screen/customize_screen.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/helper/binding.dart';
@@ -12,7 +14,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await CashHelper.init();
-
   runApp(const MyApp());
 }
 
@@ -25,14 +26,19 @@ class MyApp extends StatelessWidget {
       initialBinding: Binding(),
       title: 'Together Forever',
       debugShowCheckedModeBanner: false,
+
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarColor: KPrimaryColor,
+                systemNavigationBarColor: KPrimaryColor)),
         //primaryColor: KPrimaryColor,
         primarySwatch: primarySwatch,
 
         fontFamily: 'RobotoCondensed',
       ),
-      //initialRoute: CustomizeScreen.routeName,
-      initialRoute: '/',
+      initialRoute: CheckOutScreen.routeName,
+     // initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const ControlScreen()),
         GetPage(
@@ -42,7 +48,9 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: CustomizeScreen.routeName,
           page: () => const CustomizeScreen(),
-        )
+        ),
+        GetPage(
+            name: CheckOutScreen.routeName, page: () => const CheckOutScreen())
       ],
     );
   }

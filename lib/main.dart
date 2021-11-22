@@ -2,21 +2,23 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/core/services/cash_helper.dart';
-import 'package:together_forever/screens/category_screen/category_screen.dart';
-import 'package:together_forever/screens/customize_screen/customize_screen.dart';
+import 'package:together_forever/views/category_screen/category_screen.dart';
+import 'package:together_forever/views/customize_screen/customize_screen.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/helper/binding.dart';
-import 'package:together_forever/screens/control_screen.dart';
+import 'package:together_forever/views/control_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await CashHelper.init();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
       //initialRoute: CustomizeScreen.routeName,
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => ControlScreen()),
+        GetPage(name: '/', page: () => const ControlScreen()),
         GetPage(
           name: CategoryScreen.routeName,
           page: () => const CategoryScreen(),

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/controllers/auth_controller.dart';
-import 'package:together_forever/screens/auth/phone_auth_screen.dart';
+import 'package:together_forever/views/auth/phone_auth_screen.dart';
 import 'package:together_forever/widgets/custom_elevated_button.dart';
 
 import 'package:together_forever/widgets/custom_text.dart';

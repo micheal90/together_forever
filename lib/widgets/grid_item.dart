@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/models/meal_model.dart';
-import 'package:together_forever/screens/customize_screen/customize_screen.dart';
+import 'package:together_forever/views/customize_screen/customize_screen.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 
 class GridItem extends StatefulWidget {

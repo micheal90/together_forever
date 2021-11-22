@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/controllers/auth_controller.dart';
-import 'package:together_forever/screens/auth/signin_screen.dart';
+import 'package:together_forever/views/auth/signin_screen.dart';
 import 'package:together_forever/widgets/custom_elevated_button.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 
@@ -13,6 +12,8 @@ class PhoneAuthScreen extends StatelessWidget {
   String code = '+961';
   final GlobalKey<FormState> _formKey = GlobalKey();
   final TextEditingController phoneController = TextEditingController();
+
+  PhoneAuthScreen({Key? key}) : super(key: key);
   void _onCountryChange(CountryCode countryCode) {
     code = countryCode.toString();
     print('New Country selected: ' + countryCode.toString());
@@ -27,7 +28,7 @@ class PhoneAuthScreen extends StatelessWidget {
             elevation: 0,
             backgroundColor: Colors.transparent,
             leading: IconButton(
-              icon: Icon(
+              icon:const Icon(
                 Icons.arrow_back_ios,
                 color: Colors.black,
               ),
@@ -40,7 +41,7 @@ class PhoneAuthScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CustomText(
+                  const CustomText(
                     text: 'Together Forever',
                     fontSize: 40,
                   ),
@@ -69,7 +70,7 @@ class PhoneAuthScreen extends StatelessWidget {
                         onChanged: _onCountryChange,
                         // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
                         initialSelection: 'lb',
-                        favorite: ['+961', 'lb','+49','de'],
+                        favorite:const ['+961', 'lb','+49','de'],
                         // optional. Shows only country name and flag
                         showCountryOnly: false,
                         // optional. Shows only country name and flag when popup is closed.

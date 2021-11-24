@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
 
         fontFamily: 'RobotoCondensed',
       ),
-      initialRoute: CheckOutScreen.routeName,
-     // initialRoute: '/',
+      //initialRoute: CheckOutScreen.routeName,
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const ControlScreen()),
         GetPage(

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,6 +11,7 @@ import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/helper/binding.dart';
 import 'package:together_forever/views/control_screen.dart';
 import 'package:together_forever/views/favorite_screen/favorite_screen.dart';
+import 'package:together_forever/views/settings_screen/settings_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,9 +53,13 @@ class MyApp extends StatelessWidget {
           name: CustomizeScreen.routeName,
           page: () => const CustomizeScreen(),
         ),
-        GetPage(name: CheckOutScreen.routeName, page: () =>const CheckOutScreen()),
         GetPage(
-            name: FavoriteScreen.routeName, page: () =>  FavoriteScreen())
+            name: CheckOutScreen.routeName, page: () => const CheckOutScreen()),
+        GetPage(name: FavoriteScreen.routeName, page: () => FavoriteScreen()),
+        GetPage(
+          name: SettingsScreen.routeName,
+          page: () => const SettingsScreen(),
+        )
       ],
     );
   }

@@ -28,10 +28,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-            systemOverlayStyle: SystemUiOverlayStyle(
-                statusBarColor: KPrimaryColor,
-                systemNavigationBarColor: KPrimaryColor)),
+        // appBarTheme: const AppBarTheme(
+        //     systemOverlayStyle: SystemUiOverlayStyle(
+        //         statusBarColor: KPrimaryColor,
+        //         systemNavigationBarColor: KPrimaryColor)),
+                scaffoldBackgroundColor: KScaffoldColor,
         //primaryColor: KPrimaryColor,
         primarySwatch: primarySwatch,
 
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
           page: () => const CustomizeScreen(),
         ),
         GetPage(
-            name: CheckOutScreen.routeName, page: () => const CheckOutScreen())
+            name: CheckOutScreen.routeName, page: () =>  CheckOutScreen())
       ],
     );
   }

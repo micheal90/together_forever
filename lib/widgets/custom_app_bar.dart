@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      centerTitle: true,
+      //centerTitle: true,
       backgroundColor: KPrimaryColor,
       elevation: 0,
       title: const CustomText(
@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
-        alignment: Alignment.center,
+        //alignment: Alignment.center,
       ),
       actions: [
          IconButton(

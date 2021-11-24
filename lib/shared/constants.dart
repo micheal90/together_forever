@@ -5,7 +5,7 @@ const String USER_DATA = 'userData';
 
 const KPrimaryColor = Color(0xff00c569);
 const KBackgroundColor = Color(0xfff8f5e3);
-const KScaffoldColor = Color(0xffc9f5e0);
+const KScaffoldColor = Color(0xfff8f5e3);
 
 Map<int, Color> color = {
   50: Color.fromRGBO(0, 171, 103, .1),
@@ -31,6 +31,10 @@ enum Booster {
   FRIES_WITH_DITE_7UP,
   FRIES_WITH_BEER
 }
+enum OrderMethod{DELIVERY,TAKEAWAY}
+enum DeliverTime{IMMEDIATE,SCHEDULED}
+enum PaymentMethod{CASH,CREDIT}
+
 convertBoosterToString(Booster value) {
     if (value == Booster.REGULAR) {
       return 'Regular';

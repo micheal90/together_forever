@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 
 class CustomLabel extends StatelessWidget {
@@ -10,7 +11,7 @@ class CustomLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey.shade300,
+      color: KPrimaryColor.withOpacity(0.2),
       padding: const EdgeInsets.all(10.0),
       child: CustomText(
         text: text,

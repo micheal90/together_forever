@@ -9,6 +9,7 @@ import 'package:together_forever/views/customize_screen/customize_screen.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/helper/binding.dart';
 import 'package:together_forever/views/control_screen.dart';
+import 'package:together_forever/views/favorite_screen/favorite_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,18 +29,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       theme: ThemeData(
-        // appBarTheme: const AppBarTheme(
-        //     systemOverlayStyle: SystemUiOverlayStyle(
-        //         statusBarColor: KPrimaryColor,
-        //         systemNavigationBarColor: KPrimaryColor)),
-                scaffoldBackgroundColor: KScaffoldColor,
+        appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarColor: KPrimaryColor,
+                systemNavigationBarColor: KPrimaryColor)),
+        scaffoldBackgroundColor: KScaffoldColor,
         //primaryColor: KPrimaryColor,
         primarySwatch: primarySwatch,
 
         fontFamily: 'RobotoCondensed',
       ),
-      initialRoute: CheckOutScreen.routeName,
-     // initialRoute: '/',
+      //initialRoute: CheckOutScreen.routeName,
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const ControlScreen()),
         GetPage(
@@ -50,8 +51,9 @@ class MyApp extends StatelessWidget {
           name: CustomizeScreen.routeName,
           page: () => const CustomizeScreen(),
         ),
+        GetPage(name: CheckOutScreen.routeName, page: () =>const CheckOutScreen()),
         GetPage(
-            name: CheckOutScreen.routeName, page: () =>  CheckOutScreen())
+            name: FavoriteScreen.routeName, page: () =>  FavoriteScreen())
       ],
     );
   }

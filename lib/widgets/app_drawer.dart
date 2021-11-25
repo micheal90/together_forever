@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:together_forever/widgets/custom_list_tile_appbar.dart';
+import 'package:get/get.dart';
+import 'package:together_forever/views/settings_screen/settings_screen.dart';
+import 'package:together_forever/widgets/custom_list_tile.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -20,32 +22,32 @@ class AppDrawer extends StatelessWidget {
                     ))),
             child: null,
           ),
-          CustomListTileAppBar(
+          CustomListTile(
             leading: Icons.shopping_cart_outlined,
             title: 'My Cart',
             onPressed: () {},
           ),
-          CustomListTileAppBar(
+          CustomListTile(
             leading: Icons.shopping_bag_outlined,
             title: 'My Order',
             onPressed: () {},
           ),
-          CustomListTileAppBar(
+          CustomListTile(
             leading: Icons.settings,
             title: 'Settings',
-            onPressed: () {},
+            onPressed: ()=>Get.toNamed(SettingsScreen.routeName),
           ),
-          CustomListTileAppBar(
+          CustomListTile(
             leading: Icons.notifications_none_outlined,
             title: 'Notifications',
             onPressed: () {},
           ),
-          CustomListTileAppBar(
+          CustomListTile(
             leading: Icons.location_on_rounded,
             title: 'Location',
             onPressed: () {},
           ),
-          CustomListTileAppBar(
+          CustomListTile(
             leading: Icons.mail,
             title: 'Contact Us',
             onPressed: () {},

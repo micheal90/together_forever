@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:together_forever/core/services/cash_helper.dart';
+import 'package:together_forever/views/add_address_screen/add_address_screen.dart';
 import 'package:together_forever/views/category_screen/category_screen.dart';
 import 'package:together_forever/views/checkout_screen/checkout_screen.dart';
 import 'package:together_forever/views/customize_screen/customize_screen.dart';
@@ -61,9 +62,13 @@ class MyApp extends StatelessWidget {
           name: SettingsScreen.routeName,
           page: () => const SettingsScreen(),
         ),
-         GetPage(
+        GetPage(
           name: ProfileScreen.routeName,
           page: () => const ProfileScreen(),
+        ),
+        GetPage(
+          name: AddAddressScreen.routeName,
+          page: () => const AddAddressScreen(),
         ),
       ],
     );

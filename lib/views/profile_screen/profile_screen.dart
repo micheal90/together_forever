@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:together_forever/shared/constants.dart';
+import 'package:together_forever/views/add_address_screen/add_address_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -45,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                   title:const Text('Address'),
                   trailing: IconButton(
                     icon:const Icon(Icons.edit),
-                    onPressed: () {},
+                    onPressed: ()=>Get.toNamed(AddAddressScreen.routeName),
                   ),
                   subtitle:
                     const  Text('Damascus babtoma\nkasaa street\nbuilding number 12'),
@@ -57,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 400,
+              height: 200,
             )
           ]))
         ],

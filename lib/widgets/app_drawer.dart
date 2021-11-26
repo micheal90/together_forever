@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:together_forever/views/my_order_screen/my_order_screen.dart';
 import 'package:together_forever/views/settings_screen/settings_screen.dart';
 import 'package:together_forever/widgets/custom_list_tile.dart';
 
@@ -30,7 +31,7 @@ class AppDrawer extends StatelessWidget {
           CustomListTile(
             leading: Icons.shopping_bag_outlined,
             title: 'My Order',
-            onPressed: () {},
+            onPressed: ()=>Get.toNamed(MyOrderScreen.routeName),
           ),
           CustomListTile(
             leading: Icons.settings,

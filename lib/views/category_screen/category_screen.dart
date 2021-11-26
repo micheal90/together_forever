@@ -42,6 +42,7 @@ class _CategoryScreenState extends State<CategoryScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
+        title: 'TOGETHER FOREVER',
         tabBar: TabBar(
             isScrollable: true,
             controller: _tabController,

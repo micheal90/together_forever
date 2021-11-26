@@ -12,6 +12,7 @@ import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/helper/binding.dart';
 import 'package:together_forever/views/control_screen.dart';
 import 'package:together_forever/views/favorite_screen/favorite_screen.dart';
+import 'package:together_forever/views/my_order_screen/my_order_screen.dart';
 import 'package:together_forever/views/profile_screen/profile_screen.dart';
 import 'package:together_forever/views/settings_screen/settings_screen.dart';
 
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
 
         fontFamily: 'RobotoCondensed',
       ),
-      initialRoute: ProfileScreen.routeName,
+      initialRoute: MyOrderScreen.routeName,
       //initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const ControlScreen()),
@@ -69,6 +70,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: AddAddressScreen.routeName,
           page: () => const AddAddressScreen(),
+        ),
+        GetPage(
+          name: MyOrderScreen.routeName,
+          page: () => const MyOrderScreen(),
         ),
       ],
     );

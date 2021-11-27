@@ -10,12 +10,19 @@ class SearchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: TextFormField(
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.search),
-          hintText: 'Search for a product',
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(KBorderRadius)),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(KBorderRadius),
+          color: Colors.grey.shade200,
+        ),
+        child: TextFormField(
+          decoration: const InputDecoration(
+            prefixIcon: Icon(Icons.search),
+            hintText: 'Search for a product',
+            enabledBorder: InputBorder.none,
+            border: InputBorder.none,
+            errorBorder: InputBorder.none,
+          ),
         ),
       ),
     );

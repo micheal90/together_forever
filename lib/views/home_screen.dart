@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
         children: [
-          // const SearchWidget(),
+           const SearchWidget(),
           coverSection(context),
           const Padding(
             padding: EdgeInsets.all(8.0),

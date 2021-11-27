@@ -43,6 +43,7 @@ class _CategoryScreenState extends State<CategoryScreen>
     return Scaffold(
       appBar: CustomAppBar(
         title: 'TOGETHER FOREVER',
+        withAction: true,
         tabBar: TabBar(
             isScrollable: true,
             controller: _tabController,

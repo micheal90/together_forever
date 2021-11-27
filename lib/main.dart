@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -32,20 +31,22 @@ class MyApp extends StatelessWidget {
       initialBinding: Binding(),
       title: 'Together Forever',
       debugShowCheckedModeBanner: false,
-
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-            systemOverlayStyle: SystemUiOverlayStyle(
-                statusBarColor: KPrimaryColor,
-                systemNavigationBarColor: KPrimaryColor)),
+          systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarColor: KPrimaryColor,
+              systemNavigationBarColor: KPrimaryColor),
+          actionsIconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white),
+        ),
         scaffoldBackgroundColor: KScaffoldColor,
         //primaryColor: KPrimaryColor,
         primarySwatch: primarySwatch,
 
         fontFamily: 'RobotoCondensed',
       ),
-      initialRoute: MyOrderScreen.routeName,
-      //initialRoute: '/',
+      //initialRoute: MyOrderScreen.routeName,
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const ControlScreen()),
         GetPage(

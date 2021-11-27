@@ -54,7 +54,6 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                   maxLines: 3,
                   decoration: const InputDecoration(
                     labelText: 'Full Address *',
-                  
                     border: InputBorder.none,
                     enabledBorder: InputBorder.none,
                   ),
@@ -99,6 +98,8 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
       height: 250,
       width: MediaQuery.of(context).size.width,
       child: GoogleMap(
+        myLocationEnabled: true,
+        myLocationButtonEnabled: true,
         mapType: MapType.hybrid,
         initialCameraPosition: _kGooglePlex,
         onMapCreated: (GoogleMapController controller) {

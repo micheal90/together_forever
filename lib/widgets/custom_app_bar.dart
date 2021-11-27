@@ -6,7 +6,8 @@ import 'package:together_forever/views/favorite_screen/favorite_screen.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({required this.title,this.tabBar, this.withAction, Key? key})
+  const CustomAppBar(
+      {required this.title, this.tabBar, this.withAction, Key? key})
       : super(key: key);
   final String title;
   final TabBar? tabBar;
@@ -22,22 +23,27 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       //centerTitle: true,
       backgroundColor: KPrimaryColor,
       elevation: 0,
-      title:  CustomText(
+      title: CustomText(
         text: title,
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
         //alignment: Alignment.center,
       ),
+
       actions: withAction != null
           ? [
               IconButton(
                 onPressed: () => Get.toNamed(CheckOutScreen.routeName),
-                icon: const Icon(Icons.shopping_cart_outlined),
+                icon: const Icon(
+                  Icons.shopping_cart_outlined,
+                ),
               ),
               IconButton(
                 onPressed: () => Get.toNamed(FavoriteScreen.routeName),
-                icon: const Icon(Icons.favorite_border),
+                icon: const Icon(
+                  Icons.favorite_border,
+                ),
               )
             ]
           : null,

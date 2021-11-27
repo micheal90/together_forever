@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: KScaffoldColor,
-      appBar: const CustomAppBar(title: 'TOGETHER FOREVER',),
+      appBar: const CustomAppBar(title: 'TOGETHER FOREVER',withAction: true,),
       
       body: ListView(
         padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),

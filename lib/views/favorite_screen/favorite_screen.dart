@@ -55,7 +55,7 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'TOGETHER FOREVER',),
+      appBar: const CustomAppBar(title: 'TOGETHER FOREVER',withAction: true,),
       body: GridView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 2.0),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(

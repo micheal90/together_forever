@@ -1,10 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:together_forever/shared/constants.dart';
 import 'package:together_forever/shared/size_config.dart';
 import 'package:together_forever/widgets/app_drawer.dart';
@@ -75,14 +73,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+
     return Scaffold(
       backgroundColor: KScaffoldColor,
-      appBar: const CustomAppBar(title: 'TOGETHER FOREVER',withAction: true,),
-      
+      appBar: const CustomAppBar(
+        title: 'TOGETHER FOREVER',
+        withAction: true,
+      ),
       body: ListView(
         padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
         children: [
-           const SearchWidget(),
+          const SearchWidget(),
           coverSection(context),
           const Padding(
             padding: EdgeInsets.all(8.0),
@@ -122,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
               alignment: Alignment.center,
               color: Colors.white,
               fontWeight: FontWeight.bold,
-            )
+            ),
           ],
         ),
       ),
@@ -169,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       height: 200,
-      width: MediaQuery.of(context).size.width,
+      width: SizeConfig.screenWidth ,
       child: Stack(
         //alignment: AlignmentDirectional.bottomCenter,
         fit: StackFit.expand,

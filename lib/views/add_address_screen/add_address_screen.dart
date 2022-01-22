@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:together_forever/shared/size_config.dart';
 import 'package:together_forever/widgets/custom_elevated_button.dart';
 import 'package:together_forever/widgets/custom_text.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -96,7 +97,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
   SizedBox googleMapsSection(BuildContext context) {
     return SizedBox(
       height: 250,
-      width: MediaQuery.of(context).size.width,
+      width: SizeConfig.screenWidth,
       child: GoogleMap(
         myLocationEnabled: true,
         myLocationButtonEnabled: true,

@@ -16,6 +16,7 @@ class SearchWidget extends StatelessWidget {
           color: Colors.grey.shade200,
         ),
         child: TextFormField(
+          onTap: (){},
           decoration: const InputDecoration(
             prefixIcon: Icon(Icons.search),
             hintText: 'Search for a product',
